@@ -1,0 +1,23 @@
+@(userList: java.util.List[User])
+
+@main("User List") {
+    <h2>List of Users in DB </h2>
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Name</th>
+            <th>Public Repos</th>
+        </thead>
+        <tbody>
+        @for(user <- userList) {
+            <tr>
+                <td>@user.id</td>
+                <td>@user.name</td>
+                <td>@user.login</td>
+                <td>@user.public_repos</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
